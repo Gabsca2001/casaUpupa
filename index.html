@@ -21,7 +21,14 @@
     <nav class="navbar_1">
         <div class="logo">
             <a href="index.html">
-                <img src="./assets/images/logo_light.png" class="img-fluid" alt="Logo CasaUpupa">
+                <!-- <img src="./assets/images/logo_light.png" class="img-fluid" alt="Logo CasaUpupa"> -->
+                <picture>
+                    <source srcset="./assets/images/logos/logo_light.png" media="(min-width: 1024px)">
+                    <source srcset="./assets/images/logos/logo_light_medium.png" media="(min-width: 768px)">
+                    <source srcset="./assets/images/logos/logo_light_medium.png" media="(min-width: 360px)">
+                    <source srcset="./assets/images/logos/logo_light_small.png" media="(min-width: 0px)">
+                    <img src="./assets/images/logos/logo_light.png" alt="Logo CasaUpupa">
+                </picture>
             </a>
         </div>
         <div class="menu">

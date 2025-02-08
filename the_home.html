@@ -23,7 +23,13 @@
     <nav class="navbar_1 black">
         <div class="logo">
             <a href="index.html">
-                <img src="./assets/images/logo_dark.png" class="img-fluid" alt="Logo CasaUpupa">
+                <picture id="logo">
+                    <source srcset="./assets/images/logos/logo_dark.png" media="(min-width: 1024px)">
+                    <source srcset="./assets/images/logos/logo_dark_medium.png" media="(min-width: 768px)">
+                    <source srcset="./assets/images/logos/logo_dark_medium.png" media="(min-width: 360px)">
+                    <source srcset="./assets/images/logos/logo_dark_small.png" media="(min-width: 0px)">
+                    <img src="./assets/images/logos/logo_dark.png" alt="Logo CasaUpupa">
+                </picture>
             </a>
         </div>
         <div class="menu">

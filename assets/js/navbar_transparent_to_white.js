@@ -1,3 +1,6 @@
+// script used to change navbar from transparent to white and vice versa on scroll
+// and to change the logo from light to dark and vice versa in mobile view when the navbar black is opened
+
 document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.querySelector(".navbar_1");
     const logo = document.querySelector("#logo");  // Check if the #logo exists

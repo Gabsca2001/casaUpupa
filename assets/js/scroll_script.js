@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add custom vertical-to-horizontal scrolling
             window.addEventListener("wheel", horizontalScroll, { passive: false });
 
-            console.log("LocomotiveScroll enabled (Desktop)");
         }
     }
 
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Remove event listener for custom horizontal scrolling
             window.removeEventListener("wheel", horizontalScroll);
 
-            console.log("LocomotiveScroll disabled (Mobile)");
         }
     }
 

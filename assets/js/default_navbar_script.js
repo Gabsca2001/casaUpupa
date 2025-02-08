@@ -1,3 +1,7 @@
+// script used to change navbar from desktop to mobile view and vice versa
+// and to change the logo from light to dark and vice versa in mobile view when the navbar black is opened
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const burger = document.querySelector(".burger");
     const menu = document.querySelector(".menu");

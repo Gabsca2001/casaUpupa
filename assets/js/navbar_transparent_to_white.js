@@ -62,7 +62,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Optional: You may also want to update the logo when the mobile menu is toggled
     const burger = document.querySelector(".burger");
-    burger.addEventListener("click", () => {
-        handleNavbarScroll(); // Call handleNavbarScroll to update the logo when burger is clicked
-    });
+    burger.addEventListener("click", handleNavbarScroll); // Update logo when the burger menu is clicked
 });

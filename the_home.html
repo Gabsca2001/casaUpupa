@@ -2,20 +2,90 @@
 <html>
 
 <head lang="it">
-    <title>The Home</title>
+    <title>CasaUpupa | The Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CasaUpupa">
-    <meta name="keywords" content="CasaUpupa Tuscany Italy">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CasaUpupa: casa vacanza moderna e spaziosa in Toscana con vista sulle colline, piscina esterna, e comfort di alta qualità. Perfetta per una vacanza rilassante.">
+    <meta name="keywords" content="CasaUpupa, casa vacanza Toscana, villa moderna Toscana, piscina Toscana, vista colline toscane, affitto casa vacanza Toscana, relax in Toscana, vacanza con piscina, casa con vista, soggiorno in Toscana">
     <meta name="author" content="CasaUpupa">
-    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <!-- meta -->
-    <meta property="og:title" content="CasaUpupa">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.casaupupa.com">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="application-name" content="CasaUpupa">
+
+    <!-- Open Graph Meta Tags-->
+    <meta property="og:title" content="CasaUpupa - Casa Vacanza in Toscana">
+    <meta property="og:description" content="CasaUpupa: una casa vacanza moderna e spaziosa in Toscana con vista sulle colline, piscina esterna, e comfort di alta qualità. Perfetta per una vacanza rilassante.">
     <meta property="og:image" content="https://www.casaupupa.com/assets/images/logos/logo_dark.png">
-    <meta property="og:description" content="CasaUpupa">
+    <meta property="og:url" content="https://www.casaupupa.com">
+    <meta property="og:type" content="website">
     <meta property="og:site_name" content="CasaUpupa">
+
+    <!-- Twitter Card for Social Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CasaUpupa - Casa Vacanza in Toscana">
+    <meta name="twitter:description" content="CasaUpupa: una casa vacanza moderna e spaziosa in Toscana con vista sulle colline, piscina esterna, e comfort di alta qualità. Perfetta per una vacanza rilassante.">
+    <meta name="twitter:image" content="https://www.casaupupa.com/assets/images/hero.jpg">
+    <meta name="twitter:site" content="@CasaUpupa">
+    
+    <!--Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./apple-favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./apple-favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./apple-favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./apple-favicons/apple-touch-icon-144x144.png">
+    
+    <!-- Canonical Link-->
+    <link rel="canonical" href="https://www.casaupupa.com">
+
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "DINSGIN",
+            "url": "https://www.casaupupa.com",
+            "mainEntity": [
+                {
+                    "@type": "WebPage",
+                    "url": "https://www.casaupupa.com/about",
+                    "name": "About"
+                },
+                {
+                    "@type": "WebPage",
+                    "url": "https://www.casaupupa.com/rooms",
+                    "name": "Rooms"
+                },
+                {
+                    "@type": "WebPage",
+                    "url": "https://www.casaupupa.com/experiences",
+                    "name": "Experience"
+                },
+                {
+                    "@type": "WebPage",
+                    "url": "https://www.casaupupa.com/the_home",
+                    "name": "The Home"
+                },
+                {
+                    "@type": "WebPage",
+                    "url": "https://www.casaupupa.com/index",
+                    "name": "Homepage"
+                },
+                {
+                    "@type": "WebPage",
+                    "url": "https://www.casaupupa.com/faq",
+                    "name": "FAQ"
+                }
+            ]
+        }
+    </script>
+
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/navbar.css">
@@ -44,7 +114,7 @@
             <ul>
                 <li><a href="the_home.html" class="active">The Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="service.html">Service</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
                 <li><a href="experiences.html">Experience</a></li>
             </ul>
         </div>
@@ -58,39 +128,10 @@
     <div class="scroll_container" data-scroll-container>
         <div class="slide_1" data-scroll-section>
             <div class="row" data-scroll>
-                <div class="col-md-4 column_1">
-                    <img class="img-fluid" src="./assets/images/the_home_1.jpg" alt="image 1" />
+                <div class="col-md-7 column_1">
+                    <img class="img-fluid" src="./assets/images/the_home/the_home_1.jpg" alt="image 1" />
                 </div>
-                <div class="col-md-4 column_1">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-                <div class="col-md-4 column_1">
-                    <img class="img-fluid" src="./assets/images/the_home_2.jpg" alt="image 2" />
-                </div>
-            </div>
-        </div>
-
-        <div class="slide_1" data-scroll-section>
-            <div class="row" data-scroll>
-                <div class="col-md-4 column_1">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-                <div class="col-md-4 column_1">
-                    <img src="./assets/images/the_home_3.jpg" alt="Image 3">
-                </div>
-                <div class="col-md-4 column_1">
+                <div class="col-md-5 column_1">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -102,10 +143,48 @@
             </div>
         </div>
 
-        <div class="slide_1_min" data-scroll-section>
+        <div class="slide_1_mod" data-scroll-section>
             <div class="row" data-scroll>
-                <div class="col-md-12 column_1">
-                    <img src="./assets/images/the_home_3.jpg" alt="Image 4">
+                <div class="col-md-3 column_1">
+                    <img src="./assets/images/the_home/the_home_2.jpg" alt="Image 2">
+                </div>
+                <div class="col-md-4 column_1">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="col-md-5 column_1">
+                    <img src="./assets/images/the_home/the_home_3.jpg" alt="Image 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="slide_1_mod" data-scroll-section>
+            <div class="row" data-scroll>
+                <div class="col-md-3 column_1">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="col-md-6 column_1">
+                    <img src="./assets/images/the_home/the_home_4.jpg" alt="Image 4">
+                </div>
+                <div class="col-md-3 column_1">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
                 </div>
             </div>
         </div>
@@ -122,7 +201,7 @@
                     <a href="faq.html">FAQ</a>
                 </li>
                 <li>
-                    <a href="">Instagram</a>
+                    <a target="_blank" href="https://www.instagram.com/casa.upupa/?locale=it_IT&hl=en">Instagram</a>
                 </li>
                 <li>
                     <a href="">Facebook</a>

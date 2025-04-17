@@ -190,9 +190,8 @@
 }
 
 .slide_1_mod {
-    width: 130vw;
+    width: 120vw;
     height: 100%;
-    padding: 0 2rem;
 }
 
 .column_1 {
@@ -216,49 +215,74 @@
     border-radius: 8px;
 }
 
-.column_1 p {
-    font-size: 1.2rem;
-    margin: 0;
-    padding: 2rem;
+.column_1.column_1_caption{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding: 2rem 4rem !important;
+    box-sizing: border-box;
+}
+
+.column_1.column_1_caption h2 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bold;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.column_1.column_1_caption p{
+    font-size: 1rem;
     display: block;
     word-break: break-word;
     white-space: normal;
-    color: #555;
     text-align: left;
 }
 
-@media (max-width: 768px) {
-    .column_1 p {
-        font-size: 1rem;
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-    }
 
-    .column_1 img {
-        width: 100%;
-        height: auto;
-    }
+@media (max-width: 768px) {
 
     .scroll_container {
-        overflow-x: hidden;
+        width: 100%;
+        height: auto;
+        overflow-x: scroll;
         overflow-y: scroll;
+        white-space: nowrap;
+        display: flex;
         flex-direction: column;
-        padding-top: 5rem;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     .slide_1,
     .slide_1_mod {
-        min-width: 100%;
-        max-width: 100vw;
-        height: auto;
-        display: block;
-        padding: 0;
+        width: 100%;
+        height: 100%;
     }
 
     .column_1 {
+        width: 100%;
         height: auto;
-        margin: 0 !important;
+        padding: 0;
+        margin: 0;
     }
+
+    .column_1 img {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+        border-radius: 0px;
+    }
+
+    .column_1.column_1_caption {
+        padding: 6rem 2rem !important;
+        box-sizing: border-box;
+        text-align: left;
+
+    }
+
 }
 
 /* experiences */
@@ -286,8 +310,14 @@
 .column_2 p {
     font-size: 1rem;
     margin: 0;
-    padding: 0;
+    padding: 1.5rem 0;
     color: #555;
+}
+
+.column_2 p a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
 .column_2 .experience_price {

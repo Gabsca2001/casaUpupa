@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbarBlack = document.querySelector(".navbar_1.black");
     const logoImg = document.querySelector("#logo img");
     const logoSources = document.querySelectorAll("#logo source");
+    const btnBooking = document.querySelector(".btn_navbar");
 
     // Define logo paths for light and dark modes
     const logoLight = {
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (isActive) {
                 console.log('Switching to light logo');
                 updateLogo(logoLight);
+                btnBooking.classList.remove("btn_black");
             } else {
                 console.log('Switching to dark logo');
                 updateLogo(logoDark);

@@ -3,6 +3,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.querySelector(".navbar_1");
+    const btnBooking = document.querySelector(".btn_navbar");
+    
     const logo = document.querySelector("#logo");  // Check if the #logo exists
     if (!logo) {
         console.error("Logo element not found!");
@@ -26,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "0px": "./assets/images/logos/logo_dark_small.png"
     };
 
+    
+
     // Function to update logo sources based on the mode (light or dark)
     function updateLogoOnScroll(logoSet) {
         const mediaSizes = Object.keys(logoSet).sort((a, b) => parseInt(b) - parseInt(a)); // Sort media queries from large to small
@@ -46,13 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (window.scrollY > 50) {
             navbar.classList.add("black");
+            btnBooking.classList.add("btn_black"); // Add class to the booking button
             if (isMobileMenuActive) {
                 updateLogoOnScroll(logoLight);  // Use light logo when the menu is open and scrolled
+                btnBooking.classList.remove("btn_black"); // Remove class to the booking button
             } else {
                 updateLogoOnScroll(logoDark);   // Default dark logo when scrolled
             }
         } else {
             navbar.classList.remove("black");
+            btnBooking.classList.remove("btn_black"); // Remove class to the booking button
             updateLogoOnScroll(logoLight);  // Use light logo when at the top of the page
         }
     }

@@ -42,7 +42,7 @@ incrementButtonDays.addEventListener('click', (event) => {
 decrementButtonDays.addEventListener('click', (event) => {
     event.preventDefault();
     let currentValue = parseInt(counterInputDays.value, 10);
-    if (currentValue > 1) {
+    if (currentValue > 3) {
         counterInputDays.value = currentValue - 1;
     }
 });
@@ -117,31 +117,65 @@ decrementButtonMonth.addEventListener('click', (event) => {
 
 // Gestione dell'invio del form
 document.addEventListener('DOMContentLoaded', function () {
-
-
-    // Gestione dell'invio del form
     document.getElementById('search_form').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-        event.preventDefault();  // Evita il comportamento predefinito del form
+        const arrivalDay = parseInt(document.getElementById('arrival_day').value, 10);
+        const numberOfDays = parseInt(document.getElementById('number_days').value, 10);
+        const monthAbbr = document.getElementById('month').value;
 
-        const arrivalDay = document.getElementById('arrival_day').value;
-        const numberOfDays = document.getElementById('number_days').value;
-        const month = document.getElementById('month').value;
+        // Elenco dei mesi
+        const months = ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
 
-        // URL base per il reindirizzamento
-        const baseUrl = 'https://www.esempio.com/ricerca'; // Sostituisci con l'URL reale
+        // Ottieni l'indice del mese
+        const monthIndex = months.indexOf(monthAbbr);
+        if (monthIndex === -1 || isNaN(arrivalDay) || isNaN(numberOfDays)) {
+            alert('Per favore, inserisci valori validi per giorno, mese e numero di notti.');
+            return;
+        }
+
+        const today = new Date();
+        let year = today.getFullYear();
+
+        // Se il mese selezionato è precedente al mese corrente, ipotizza l'anno successivo
+        if (monthIndex < today.getMonth() || (monthIndex === today.getMonth() && arrivalDay < today.getDate())) {
+            year += 1;
+        }
+
+        // Costruisci la data di arrivo
+        const arrivalDate = new Date(year, monthIndex, arrivalDay);
+        if (isNaN(arrivalDate.getTime())) {
+            alert('Data di arrivo non valida.');
+            return;
+        }
+
+        // Calcola la data di partenza
+        const departureDate = new Date(arrivalDate);
+        departureDate.setDate(arrivalDate.getDate() + numberOfDays);
+
+        // Formatta le date in YYYY-MM-DD
+        const formatDate = (date) => {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        };
+
+        const arrivalFormatted = formatDate(arrivalDate);
+        const departureFormatted = formatDate(departureDate);
+
+        // Costruisci l'URL
+        const baseUrl = 'https://checkout.lodgify.com/it/casa-upupa/665194/reservation';
         const params = new URLSearchParams({
-            arrival_day: arrivalDay,
-            stay_duration: numberOfDays,
-            month: month
+            currency: 'EUR',
+            arrival: arrivalFormatted,
+            departure: departureFormatted
         });
 
         const url = `${baseUrl}?${params.toString()}`;
-
-        console.log(url);  // Stampa l'URL per il debug
+        console.log(url);
 
         // Reindirizza l'utente alla nuova URL
-        window.location.href = url;  // Utilizza questo per un reindirizzamento diretto
+        window.open(url, '_blank');
     });
 });
-

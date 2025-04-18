@@ -85,6 +85,19 @@
     align-items: center;
 }
 
+.input_container_number svg {
+    width: 24px;
+    height: 24px;
+}
+
+.input_container_number button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem; /* or any value that ensures enough space */
+}
+
+
 .btn-inc,
 .btn-dec {
     width: 40px;

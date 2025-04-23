@@ -5,7 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to check if it's a desktop device
     function isDesktop() {
-        return window.innerWidth > 768; // Adjust the breakpoint as needed
+        return window.innerWidth > 768 && !isTouchDevice(); // Adjust the breakpoint as needed and add touch check
+    }
+
+    // Function to check if the device supports touch
+    function isTouchDevice() {
+        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     }
 
     // Function to enable LocomotiveScroll (Desktop)
@@ -22,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Add custom vertical-to-horizontal scrolling
             window.addEventListener("wheel", horizontalScroll, { passive: false });
-
         }
     }
 
@@ -38,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Remove event listener for custom horizontal scrolling
             window.removeEventListener("wheel", horizontalScroll);
-
         }
     }
 
@@ -46,6 +49,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function horizontalScroll(event) {
         if (locoScroll) {
             const newScrollPosition = locoScroll.scroll.instance.scroll.x + event.deltaY;
+            locoScroll.scrollTo(newScrollPosition, {
+                duration: 0.8,
+                disableLerp: false
+            });
+            event.preventDefault();
+        }
+    }
+
+    // Function to handle touch scroll (for touch devices like iPad)
+    function touchScroll(event) {
+        if (locoScroll) {
+            const newScrollPosition = locoScroll.scroll.instance.scroll.x + event.touches[0].clientY;
             locoScroll.scrollTo(newScrollPosition, {
                 duration: 0.8,
                 disableLerp: false
@@ -70,4 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Listen for window resize events
     window.addEventListener('resize', handleResize);
+
+    // Add touch event listener for touch devices
+    if (isTouchDevice()) {
+        scrollContainer.addEventListener("touchmove", touchScroll, { passive: false });
+    }
 });
